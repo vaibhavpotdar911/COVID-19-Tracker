@@ -29,3 +29,7 @@
 .nav-brand {
     font-size: 110%;
 }
+
+a:hover {
+    color: white;
+}
