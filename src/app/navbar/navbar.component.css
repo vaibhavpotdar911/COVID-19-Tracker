@@ -1,0 +1,31 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+
+.pl-3 {
+    padding-left: 3rem;
+}
+
+.pr-3 {
+    padding-right: 3rem;
+}
+
+.pl-1 {
+    padding-left: 0.5rem;
+}
+
+.sfFontDisplay {
+    font-family: sanFranciscoDisplay;
+}
+
+.nav-items {
+    font-size: medium;
+}
+
+.nav-brand {
+    font-size: 110%;
+}

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: sanFranciscoDisplay;
+    src: url(./assets/fonts/SF-Pro-Display-Regular.otf);
+}
+
+@font-face {
+    font-family: sanFranciscoText;
+    src: url(./assets/fonts/SF-Pro-Text-Regular.otf);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
+
+
+.grid-container{
+    margin: 20px;
+}
