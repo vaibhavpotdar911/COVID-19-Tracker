@@ -18,3 +18,29 @@
     padding-left: 1rem;
 }
  
+.header-image-covid {
+    background-image: url('../../assets/images/coronavirus.jpg');
+    background-size: cover;
+}
+
+.button-align {
+    margin-left: 3rem;
+}
+
+.header-image-app {
+    background-image: url('../../assets/images/angular_material.png');
+    background-size: cover;
+}
+
+.material-button {
+    background-color: #fb8c00;
+}
+
+.aws-button {
+    background-color: #f79400;
+}
+
+.aws {
+    height: 18px;
+    width: 30px;
+}
