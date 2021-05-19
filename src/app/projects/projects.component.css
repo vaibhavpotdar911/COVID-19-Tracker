@@ -3,6 +3,33 @@
 }
   
 .header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: url('../../assets/images/todo_logo.png');
     background-size: cover;
+}
+
+.header-image-dungeon {
+    background-image: url('../../assets/images/command_line.png');
+    background-size: cover;
+}
+
+.header-image-portfolio {
+    background-image: url('../../assets/images/portfolio_logo.png');
+    background-size: cover;
+}
+
+.image-margins {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.p-1{
+    margin: 10px;
+}
+
+.button-align {
+    margin-left: 6rem;
 }
