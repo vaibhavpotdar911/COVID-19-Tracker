@@ -1,4 +1,5 @@
 export interface CountryReports {
+    flag: string;
     country: string;
     cases: number;
     todayCases: number;

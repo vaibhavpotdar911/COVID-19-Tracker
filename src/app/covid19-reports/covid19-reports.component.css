@@ -13,3 +13,8 @@ th.mat-sort-header-sorted {
 .full-width {
     width: 100%;
 }
+
+.flag{
+    height: 25px;
+    margin-right: 10px;
+}

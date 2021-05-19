@@ -15,7 +15,7 @@ export class Covid19ReportsComponent implements OnInit {
 
   ELEMENT_DATA : CountryReports[] = [];
 
-  displayedColumns: string[] = ['country','cases','todayCases','deaths','todayDeaths','recovered','active','critical','casesPerOneMillion','deathsPerOneMillion','tests','testsPerOneMillion'];
+  displayedColumns: string[] = ['flag','country','cases','todayCases','deaths','todayDeaths','recovered','active','critical','casesPerOneMillion','deathsPerOneMillion','tests','testsPerOneMillion'];
   dataSource = new MatTableDataSource<CountryReports>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true })
