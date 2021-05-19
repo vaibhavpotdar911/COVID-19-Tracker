@@ -17,3 +17,20 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 .grid-container{
     margin: 20px;
 }
+
+.sfFontDisplay {
+    font-family: sanFranciscoDisplay;
+}
+
+.sfFontText {
+    font-family: sanFranciscoText;
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+  
+.pl-1 {
+    padding-left: 1rem;
+}
+ 

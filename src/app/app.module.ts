@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Covid19ReportsComponent } from './covid19-reports/covid19-reports.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { Covid19ReportsComponent } from './covid19-reports/covid19-reports.compo
     HomeComponent,
     AboutComponent,
     DashboardComponent,
-    Covid19ReportsComponent
+    Covid19ReportsComponent,
+    ProjectsComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
