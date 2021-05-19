@@ -1,0 +1,20 @@
+.center {
+    text-align: center;
+    align-items: center;
+}
+
+.input-width {
+    width: 60%;
+}
+
+.input-buttons {
+    margin: px auto;
+}
+
+.btn1{
+    margin-right: 25px;
+}
+
+.comment {
+    height: 70px;
+}

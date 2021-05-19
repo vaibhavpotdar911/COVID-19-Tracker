@@ -59,3 +59,7 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 .pl-3 {
     padding-left: 3rem;
 }
+
+.pb-contact {
+    padding-bottom: 25px;
+}
