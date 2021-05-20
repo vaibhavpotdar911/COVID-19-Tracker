@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Covid19ReportsComponent } from './covid19-reports/covid19-reports.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     DashboardComponent,
     Covid19ReportsComponent,
     ProjectsComponent,
-    ContactusComponent
+    ContactusComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -63,3 +63,24 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 .pb-contact {
     padding-bottom: 25px;
 }
+
+.footer {
+    height: 100px;
+}
+
+.angular-fab{
+    background-color: #c3002f;
+}
+
+.material-fab{
+    background-color: #212121;
+}
+
+.aws-fab {
+    background-color: #f79400;
+}
+
+.aws-logo {
+    width: 35px;
+    height: 20px;
+}
