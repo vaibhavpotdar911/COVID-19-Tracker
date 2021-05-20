@@ -1,0 +1,46 @@
+.footer-class {
+    height: 50px;
+/*    background-color: #3f51b5;*/
+}
+
+.link-padding {
+    padding-left: 0.25rem;
+}
+
+.copyrights{
+    margin: 0px auto;
+}
+
+.fab-bar{
+    margin: 0px auto;
+}
+.fabs{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fab-button {
+    background-color: #e9ebee;
+    border: 0;
+}
+
+.angular-fab-logo {
+    margin-top: -7.5px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.material-fab-logo {
+    margin-top: -4.5px;
+    height: 35px;
+    width: 42.5px;
+}
+
+
+.aws-fab-logo {
+    margin-top: -7.5px;
+    margin-left: -3.5px;
+    height: 35px;
+    width: 62.5px;
+}

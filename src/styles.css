@@ -34,6 +34,10 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
     padding-left: 1rem;
 }
 
+.pr-1 {
+    padding-right: 1rem;
+}
+
 .ml-3 {
     margin-left: 3rem;
 }
@@ -64,23 +68,8 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
     padding-bottom: 25px;
 }
 
-.footer {
-    height: 100px;
-}
-
-.angular-fab{
-    background-color: #c3002f;
-}
-
-.material-fab{
-    background-color: #212121;
-}
-
-.aws-fab {
-    background-color: #f79400;
-}
-
-.aws-logo {
-    width: 35px;
-    height: 20px;
+.center-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
