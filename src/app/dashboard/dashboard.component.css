@@ -5,6 +5,10 @@
   border-radius: 10px;
 }
 
+.mat-card-header {
+  align-items: center;
+}
+
 .header-image-total {
   background-image: url('../../assets/images/total_cases_logo.png');
   background-size: cover;
@@ -31,25 +35,25 @@
 }
 
 .update-total {
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: x-large;
   color: navy;
 }
 
 .update-active {
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: x-large;
   color: chocolate;
 }
 
 .update-recovered {
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: x-large;
   color: green;
 }
 
 .update-deaths {
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: x-large;
   color: red;
 }

@@ -4,13 +4,13 @@
         <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide</span>
     </div>
     <div>
-        <mat-grid-list cols="4" gutterSize="15px" rowHeight="3:1">
+        <mat-grid-list cols="4" gutterSize="15px" rowHeight="140px">
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-header">
                         <div mat-card-avatar class="header-image-total"></div>
                         <mat-card-title class="sfFontText pt-2">Total Cases Registered</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                        <mat-card-subtitle class="card-subtitle sfFontText pt-4">
                             {{data.cases}}
                             <span class="update-total">
                                 <mat-icon>arrow_upward</mat-icon>
@@ -22,10 +22,10 @@
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-header">
                         <div mat-card-avatar class="header-image-active"></div>
                         <mat-card-title class="sfFontText pt-2">Active Cases</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                        <mat-card-subtitle class="card-subtitle sfFontText pt-4">
                             {{data.active}}
                             <span class="update-active">
                                 <mat-icon>arrow_upward</mat-icon>
@@ -37,10 +37,10 @@
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-header">
                         <div mat-card-avatar class="header-image-recovered"></div>
                         <mat-card-title class="sfFontText pt-2">Recovered Cases</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                        <mat-card-subtitle class="card-subtitle sfFontText pt-4">
                             {{data.recovered}}
                             <span class="update-recovered">
                                 <mat-icon>arrow_upward</mat-icon>
@@ -52,10 +52,10 @@
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-header">
                         <div mat-card-avatar class="header-image-deaths"></div>
                         <mat-card-title class="sfFontText pt-2">Total Deaths Registered</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                        <mat-card-subtitle class="card-subtitle sfFontText pt-4">
                             {{data.deaths}}
                             <span class="update-deaths">
                                 <mat-icon>arrow_upward</mat-icon>

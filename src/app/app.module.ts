@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ChartsModule } from "ng2-charts";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,6 +16,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VaccinationComponent } from './vaccination/vaccination.component';
+import { VaccinationReportsComponent } from './vaccination-reports/vaccination-reports.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
     ContactusComponent,
     FooterComponent,
     DashboardComponent,
-    VaccinationComponent
+    VaccinationComponent,
+    VaccinationReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
     MaterialModule,
     AppRoutingModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,48 +4,47 @@
         <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide Vaccination</span>
     </div>
     <div>
-        <mat-grid-list cols="3" gutterSize="15px" rowHeight="3:1">
+        <mat-grid-list cols="4" gutterSize="15px" rowHeight="125px" class="vaccination-grid">
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-center">
+                        <div mat-card-avatar class="header-image-population"></div>
+                        <mat-card-title class="sfFontText pt-2">Worldwide Population</mat-card-title>
+                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                            {{vaccinationData.Global.All.population}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="covid-worldwide-card">
+                    <mat-card-header class="mat-card-center">
                         <div mat-card-avatar class="header-image-vaccine-administered"></div>
                         <mat-card-title class="sfFontText pt-2">Vaccines Adminstered</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{data.active}}
-                            <span class="update-active">
-                                <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayCases}}
-                            </span>
+                            {{vaccinationData.Global.All.administered}}
                         </mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-center">
                         <div mat-card-avatar class="header-image-total-vaccinated"></div>
                         <mat-card-title class="sfFontText pt-2">Population Fully Vaccinated</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{data.recovered}}
-                            <span class="update-recovered">
-                                <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayRecovered}}
-                            </span>
+                            {{vaccinationData.Global.All.people_vaccinated}}
                         </mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
+                    <mat-card-header class="mat-card-center">
                         <div mat-card-avatar class="header-image-partial-vaccinated"></div>
                         <mat-card-title class="sfFontText pt-2">Population Partially Vaccinated</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{data.deaths}}
-                            <span class="update-deaths">
-                                <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayDeaths}}
-                            </span>
+                            {{vaccinationData.Global.All.people_partially_vaccinated}}
                         </mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
@@ -54,12 +53,12 @@
     </div>
 
     <div class="pt-3 pl-2">
-        <mat-icon class="v-align-middle">public</mat-icon>
-        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">COVID-19 data by Country</span>
+        <mat-icon class="v-align-middle">local_pharmacy</mat-icon>
+        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">COVID-19 Vaccination Data Charts</span>
     </div>
 
-    <div>
-        <app-covid19-reports></app-covid19-reports>
+    <div class="pt-3">
+        <app-vaccination-reports></app-vaccination-reports>
     </div>
 
 </div>

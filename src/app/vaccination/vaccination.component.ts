@@ -7,12 +7,12 @@ import { WorldwideCovidService } from "../worldwide-covid.service";
   styleUrls: ['./vaccination.component.css']
 })
 export class VaccinationComponent implements OnInit {
-  data: any;
+  vaccinationData: any;
   constructor(private worldwideService: WorldwideCovidService) { }
 
   ngOnInit() {
-    this.worldwideService.worldwideReports().subscribe((result) =>{
-      this.data=result;
+    this.worldwideService.worldwideVaccination().subscribe((result) =>{
+      this.vaccinationData=result;
     });
   }
 }

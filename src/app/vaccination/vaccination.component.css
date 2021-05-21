@@ -5,6 +5,20 @@
   border-radius: 10px;
 }
 
+.vaccination-grid{
+  height: 100px;
+}
+
+.mat-card-center{
+  align-items: center;
+}
+
+.header-image-population {
+  background-image: url('../../assets/images/population_logo.png');
+  background-size: cover;
+}
+
+
 .header-image-vaccine-administered {
   background-image: url('../../assets/images/injection1.png');
   background-size: cover;

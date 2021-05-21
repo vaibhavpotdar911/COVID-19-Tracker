@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <div class="chart">
+            <canvas class="myCanvas" baseChart
+                [data]="[(this.vaccinationData.Global.All.population)-(vaccinationData.Global.All.people_vaccinated)-(this.vaccinationData.Global.All.people_partially_vaccinated), this.vaccinationData.Global.All.people_vaccinated, this.vaccinationData.Global.All.people_partially_vaccinated]"
+                [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions"
+                [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+            </canvas>
+            <button class="toggleBtn" mat-raised-button color="accent" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button>
+        </div>
+    </div>
+</div>
+<div>
+</div>
