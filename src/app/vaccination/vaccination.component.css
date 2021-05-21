@@ -5,23 +5,18 @@
   border-radius: 10px;
 }
 
-.header-image-total {
-  background-image: url('../../assets/images/total_cases_logo.png');
+.header-image-vaccine-administered {
+  background-image: url('../../assets/images/injection1.png');
   background-size: cover;
 }
 
-.header-image-active {
-  background-image: url('../../assets/images/active_logo.png');
+.header-image-total-vaccinated {
+  background-image: url('../../assets/images/injection3.png');
   background-size: cover;
 }
 
-.header-image-recovered {
-  background-image: url('../../assets/images/recovered_logo.png');
-  background-size: cover;
-}
-
-.header-image-deaths {
-  background-image: url('../../assets/images/deaths_logo.png');
+.header-image-partial-vaccinated {
+  background-image: url('../../assets/images/injection2.png');
   background-size: cover;
 }
 

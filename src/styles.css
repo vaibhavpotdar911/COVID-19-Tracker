@@ -13,9 +13,13 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 
-
 .grid-container{
     margin: 20px;
+}
+
+.mlr-50 {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .sfFontDisplay {
@@ -24,6 +28,10 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 
 .sfFontText {
     font-family: sanFranciscoText;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
 
 .v-align-middle {
@@ -53,7 +61,7 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
 }
 
 .pl-2 {
-    padding-left: 2.75rem;
+    padding-left: 2rem;
 }
 
 .pb-3 {

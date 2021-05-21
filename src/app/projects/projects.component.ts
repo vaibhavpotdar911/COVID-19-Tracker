@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WorldwideCovidService } from "../worldwide-covid.service";
+
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  data: any;
+  constructor(private worldwideService: WorldwideCovidService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.worldwideService.worldwideReports().subscribe((result) =>{
+      this.data=result;
+    });
   }
 
 }

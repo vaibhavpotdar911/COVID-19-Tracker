@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component'; 
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VaccinationComponent } from './vaccination/vaccination.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: DashboardComponent
   },
   {
     path: 'about', component: AboutComponent
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'contactus', component: ContactusComponent
+  },
+  {
+    path: 'vaccination', component: VaccinationComponent
   }
 ];
 

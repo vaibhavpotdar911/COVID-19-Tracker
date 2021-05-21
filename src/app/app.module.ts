@@ -7,26 +7,26 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Covid19ReportsComponent } from './covid19-reports/covid19-reports.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VaccinationComponent } from './vaccination/vaccination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
     AboutComponent,
-    DashboardComponent,
     Covid19ReportsComponent,
     ProjectsComponent,
     ContactusComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    VaccinationComponent
   ],
   imports: [
     BrowserModule,

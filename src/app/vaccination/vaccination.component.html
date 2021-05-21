@@ -1,30 +1,15 @@
 <div class="container-fluid">
     <div class="pb-3 pl-2">
-        <mat-icon class="v-align-middle">language</mat-icon>
-        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide</span>
+        <mat-icon class="v-align-middle">local_hospital</mat-icon>
+        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide Vaccination</span>
     </div>
     <div>
-        <mat-grid-list cols="4" gutterSize="15px" rowHeight="3:1">
+        <mat-grid-list cols="3" gutterSize="15px" rowHeight="3:1">
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
                     <mat-card-header>
-                        <div mat-card-avatar class="header-image-total"></div>
-                        <mat-card-title class="sfFontText pt-2">Total Cases Registered</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{data.cases}}
-                            <span class="update-total">
-                                <mat-icon>arrow_upward</mat-icon>
-                                {{ data.todayCases }}
-                            </span>
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="covid-worldwide-card">
-                    <mat-card-header>
-                        <div mat-card-avatar class="header-image-active"></div>
-                        <mat-card-title class="sfFontText pt-2">Active Cases</mat-card-title>
+                        <div mat-card-avatar class="header-image-vaccine-administered"></div>
+                        <mat-card-title class="sfFontText pt-2">Vaccines Adminstered</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
                             {{data.active}}
                             <span class="update-active">
@@ -38,8 +23,8 @@
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
                     <mat-card-header>
-                        <div mat-card-avatar class="header-image-recovered"></div>
-                        <mat-card-title class="sfFontText pt-2">Recovered Cases</mat-card-title>
+                        <div mat-card-avatar class="header-image-total-vaccinated"></div>
+                        <mat-card-title class="sfFontText pt-2">Population Fully Vaccinated</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
                             {{data.recovered}}
                             <span class="update-recovered">
@@ -53,8 +38,8 @@
             <mat-grid-tile>
                 <mat-card class="covid-worldwide-card">
                     <mat-card-header>
-                        <div mat-card-avatar class="header-image-deaths"></div>
-                        <mat-card-title class="sfFontText pt-2">Total Deaths Registered</mat-card-title>
+                        <div mat-card-avatar class="header-image-partial-vaccinated"></div>
+                        <mat-card-title class="sfFontText pt-2">Population Partially Vaccinated</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-3">
                             {{data.deaths}}
                             <span class="update-deaths">

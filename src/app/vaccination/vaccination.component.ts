@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { WorldwideCovidService } from "../worldwide-covid.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-vaccination',
+  templateUrl: './vaccination.component.html',
+  styleUrls: ['./vaccination.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class VaccinationComponent implements OnInit {
   data: any;
   constructor(private worldwideService: WorldwideCovidService) { }
 
@@ -15,5 +15,4 @@ export class DashboardComponent implements OnInit {
       this.data=result;
     });
   }
-
 }
