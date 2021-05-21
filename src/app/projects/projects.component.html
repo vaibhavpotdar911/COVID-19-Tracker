@@ -1,106 +1,108 @@
-<div class="grid-container">
-  <mat-icon class="v-align-middle">developer_mode</mat-icon>
-  <span class="mat-h1 sfFontDisplay v-align-middle pl-1">My Projects</span>
-</div>
-
-<div class="grid-container">
-  <mat-card class="sfFontText">
-    <p class="pl-1">These are some other projects developed using various stacks and deployed on AWS and Github by
-      Vaibhav Potdar.</p>
-  </mat-card>
-</div>
-
-<div class="grid-container">
-  <mat-grid-list cols='3' rowHeight="1:1.4" gutterSize='20px'>
-    <mat-grid-tile>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title class="sfFontText">To-do List</mat-card-title>
-          <mat-card-subtitle class="sfFontText">A webapp to list the tasks and manage them</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../assets/images/todo_app.png" alt="An image of the todo app">
-        <mat-card-content>
-          <p class="justify sfFontText p-1">
-            This is a simple To-do list to make a list of some tasks/items which are supposed to be completed! This code
-            is
-            completely built on Angular v11 and Bootstrap v5. <br>
-            This application is hosted on AWS S3. To view the production build of this project head to the following
-            link.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="pb-3 center-items">
-          <a href="http://vaibhav-todolist.s3-website.ap-south-1.amazonaws.com/">
-            <button mat-raised-button color="warn">Todo app</button>
-          </a>
-          <a class="pl-1" href="https://github.com/vaibhavpotdar911/todo-list">
-            <button mat-raised-button color="primary">
-              <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
-              <span class="brand">Github Link</span>
-            </button>
-          </a>
-        </div>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image-portfolio"></div>
-          <mat-card-title class="sfFontText">Portfolio</mat-card-title>
-          <mat-card-subtitle class="sfFontText">My Personal Portfolio Website</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../assets/images/portfolio_app.png" alt="An image of the todo app">
-        <mat-card-content>
-          <p class="justify sfFontText p-1">
-            Visit my Portfolio to know more about me and my work. <br>
-            Just hit the link below.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="pb-3 center-items">
-          <a href="https://vaibhavpotdar911.github.io/Portfolio/">
-            <button mat-raised-button color="warn">Portfolio</button>
-          </a>
-          <a class="pl-1" href="https://github.com/vaibhavpotdar911/Portfolio">
-            <button mat-raised-button color="primary">
-              <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
-              <span class="brand">Github Link</span>
-            </button>
-          </a>
-        </div>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image-dungeon"></div>
-          <mat-card-title class="sfFontText">Dungeon Game</mat-card-title>
-          <mat-card-subtitle class="sfFontText">A command-line game written in Python</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../assets/images/dungeonGame.png" alt="An image of the todo app">
-        <mat-card-content>
-          <p class="justify sfFontText p-1">
-            A small command game of a player in a dungeon. There are total 3 elements in this game. <br>
-            <i>Player, Monster, Exit Door</i> <br>
-            The player would be spawned at a random place in the dungeon. He has to move towards the exit door. 
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="center-items pb-3">
-          <a class="button-align" href="https://github.com/vaibhavpotdar911/dungeonGame">
-            <button mat-raised-button color="primary">
-              <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
-              <span class="brand">Github Link</span>
-            </button>
-          </a>
-        </div>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="container">
+  <div class="grid-container pl-2">
+    <mat-icon class="v-align-middle">developer_mode</mat-icon>
+    <span class="mat-h1 sfFontDisplay v-align-middle pl-1">My Projects</span>
+  </div>
+  
+  <div class="grid-container">
+    <mat-card class="sfFontText">
+      <p class="pl-1">These are some other projects developed using various stacks and deployed on AWS and Github by
+        Vaibhav Potdar.</p>
+    </mat-card>
+  </div>
+  
+  <div class="grid-container">
+    <mat-grid-list cols='3' rowHeight="500px" gutterSize='20px'>
+      <mat-grid-tile>
+        <mat-card class="card mat-elevation-z4">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title class="sfFontText">To-do List</mat-card-title>
+            <mat-card-subtitle class="sfFontText">A webapp to list the tasks and manage them</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../assets/images/todo_app.png" alt="An image of the todo app">
+          <mat-card-content>
+            <p class="justify sfFontText p-1">
+              This is a simple To-do list to make a list of some tasks/items which are supposed to be completed! This code
+              is
+              completely built on Angular v11 and Bootstrap v5. <br>
+              This application is hosted on AWS S3. To view the production build of this project head to the following
+              link.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="pb-3 center-items">
+            <a href="http://vaibhav-todolist.s3-website.ap-south-1.amazonaws.com/">
+              <button mat-raised-button color="warn">Todo app</button>
+            </a>
+            <a class="pl-1" href="https://github.com/vaibhavpotdar911/todo-list">
+              <button mat-raised-button color="primary">
+                <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
+                <span class="brand">Github Link</span>
+              </button>
+            </a>
+          </div>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+  
+      <mat-grid-tile>
+        <mat-card class="card mat-elevation-z4">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image-portfolio"></div>
+            <mat-card-title class="sfFontText">Portfolio</mat-card-title>
+            <mat-card-subtitle class="sfFontText">My Personal Portfolio Website</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../assets/images/portfolio_app.png" alt="An image of the todo app">
+          <mat-card-content>
+            <p class="justify sfFontText p-1">
+              Visit my Portfolio to know more about me and my work. <br>
+              Just hit the link below.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="pb-3 center-items">
+            <a href="https://vaibhavpotdar911.github.io/Portfolio/">
+              <button mat-raised-button color="warn">Portfolio</button>
+            </a>
+            <a class="pl-1" href="https://github.com/vaibhavpotdar911/Portfolio">
+              <button mat-raised-button color="primary">
+                <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
+                <span class="brand">Github Link</span>
+              </button>
+            </a>
+          </div>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+  
+      <mat-grid-tile>
+        <mat-card class="card mat-elevation-z4">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image-dungeon"></div>
+            <mat-card-title class="sfFontText">Dungeon Game</mat-card-title>
+            <mat-card-subtitle class="sfFontText">A command-line game written in Python</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../assets/images/dungeonGame.png" alt="An image of the todo app">
+          <mat-card-content>
+            <p class="justify sfFontText p-1">
+              A small command game of a player in a dungeon. There are total 3 elements in this game. <br>
+              <i>Player, Monster, Exit Door</i> <br>
+              The player would be spawned at a random place in the dungeon. He has to move towards the exit door. 
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="center-items pb-3">
+            <a class="button-align" href="https://github.com/vaibhavpotdar911/dungeonGame">
+              <button mat-raised-button color="primary">
+                <img class="logo" src="../../assets/images/github_logo.png" alt="Github Logo">
+                <span class="brand">Github Link</span>
+              </button>
+            </a>
+          </div>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

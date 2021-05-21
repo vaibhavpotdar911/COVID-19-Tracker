@@ -57,3 +57,30 @@
   font-size: x-large;
   color: red;
 }
+
+.chart {
+  width: 50%;
+  padding-top: 30px;
+  align-items: center;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.myCanvas {
+  padding-bottom: 30px;
+}
+
+.toggleBtn {
+  margin-bottom: 20px;
+}
+
+.chart-div{
+  background-color: #ebe9ee;
+  border-radius: 10px;
+}
+
+.covid-report-bg {
+  background-color: #e9ebee;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}

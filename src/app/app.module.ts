@@ -16,7 +16,6 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VaccinationComponent } from './vaccination/vaccination.component';
-import { VaccinationReportsComponent } from './vaccination-reports/vaccination-reports.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { VaccinationReportsComponent } from './vaccination-reports/vaccination-r
     FooterComponent,
     DashboardComponent,
     VaccinationComponent,
-    VaccinationReportsComponent
   ],
   imports: [
     BrowserModule,
