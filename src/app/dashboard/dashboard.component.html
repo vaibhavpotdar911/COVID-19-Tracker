@@ -1,8 +1,22 @@
 <div class="container-fluid">
-    <div class="pb-3 pl-2">
-        <mat-icon class="v-align-middle">language</mat-icon>
-        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide</span>
+    <div class="d-flex">
+        <div class="pl-2 pt-2">
+            <mat-icon class="v-align-middle">language</mat-icon>
+            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide</span>
+            <span class="mat-h1 sfFontDisplay small-padding v-align-middle" *ngIf="selectedCountry!=='Global'">/<span class="small-padding"> {{selectedCountry}}</span></span>
+        </div>
+        <div class="spacer"></div>
+        <div>
+            <mat-form-field appearance="outline" class="country-selector">
+                <mat-label>Country</mat-label>
+                <mat-select [(ngModel)]="selectedCountry" (ngModelChange)="onCountrySelected()">
+                    <mat-option value="Global">Global</mat-option>
+                    <mat-option *ngFor="let countryElement of summaryReport" [value]="countryElement.country">{{ countryElement.country }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
+
     <div>
         <mat-grid-list cols="4" gutterSize="15px" rowHeight="140px">
             <mat-grid-tile>
@@ -11,10 +25,10 @@
                         <div mat-card-avatar class="header-image-total"></div>
                         <mat-card-title class="sfFontText pt-2">Total Cases Registered</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-4">
-                            {{data.cases}}
+                            {{ displayData.cases }}
                             <span class="update-total">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{ data.todayCases }}
+                                {{ displayData.todayCases }}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -26,10 +40,10 @@
                         <div mat-card-avatar class="header-image-active"></div>
                         <mat-card-title class="sfFontText pt-2">Active Cases</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-4">
-                            {{data.active}}
+                            {{displayData.active}}
                             <span class="update-active">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayCases}}
+                                {{displayData.todayCases}}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -41,10 +55,10 @@
                         <div mat-card-avatar class="header-image-recovered"></div>
                         <mat-card-title class="sfFontText pt-2">Recovered Cases</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-4">
-                            {{data.recovered}}
+                            {{displayData.recovered}}
                             <span class="update-recovered">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayRecovered}}
+                                {{displayData.todayRecovered}}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -56,10 +70,10 @@
                         <div mat-card-avatar class="header-image-deaths"></div>
                         <mat-card-title class="sfFontText pt-2">Total Deaths Registered</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-4">
-                            {{data.deaths}}
+                            {{displayData.deaths}}
                             <span class="update-deaths">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{data.todayDeaths}}
+                                {{displayData.todayDeaths}}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -75,7 +89,7 @@
         <mat-icon class="v-align-middle">donut_large</mat-icon>
         <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Visual Representation</span>
         <div class="chart">
-            <canvas class="myCanvas" baseChart [data]="[data.active,data.recovered,data.deaths]"
+            <canvas class="myCanvas" baseChart [data]="[displayData.active,displayData.recovered,displayData.deaths]"
                 [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions"
                 [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
             </canvas>
@@ -85,7 +99,7 @@
 
     </div>
     <div class="pt-3">
-        
+
     </div>
     <div class="covid-report-bg mat-elevation-z4">
         <div class="pt-3 pl-2">
