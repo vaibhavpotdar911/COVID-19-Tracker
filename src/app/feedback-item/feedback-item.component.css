@@ -1,0 +1,27 @@
+.feedback-card{
+    border-radius: 10px;
+}
+
+.card-title {
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.card-name{
+    font-weight: 600;
+    margin-bottom: 7.5px;
+}
+
+.card-email{
+    margin-bottom: 0px;
+}
+
+.card-description{
+    font-size: medium;
+    padding-left: 1rem;
+}
+
+.delete-button{
+    margin-left: 1rem;
+    min-width: 100px;
+}
