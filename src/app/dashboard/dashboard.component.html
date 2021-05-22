@@ -3,15 +3,30 @@
         <div class="pl-2 pt-2">
             <mat-icon class="v-align-middle">language</mat-icon>
             <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide</span>
-            <span class="mat-h1 sfFontDisplay small-padding v-align-middle" *ngIf="selectedCountry!=='Global'">/<span class="small-padding"> {{selectedCountry}}</span></span>
+            <span class="mat-h1 sfFontDisplay small-padding v-align-middle" *ngIf="selectedCountry!=='Global'">/<span
+                    class="small-padding"> {{selectedCountry}}</span></span>
+            <span class="mat-h1 sfFontDisplay small-padding v-align-middle" *ngIf="selectedState!=='Select an option' && selectedCountry=='India'">/<span
+                    class="small-padding"> {{selectedState}}</span></span>
         </div>
         <div class="spacer"></div>
+        
+        <div *ngIf="selectedCountry==='India'">
+            <mat-form-field appearance="outline" class="state-selector">
+                <mat-label>State</mat-label>
+                <mat-select [(ngModel)]="selectedState" (ngModelChange)="onStateSelected()">
+                    <mat-option value="Select an option">Select an option</mat-option>
+                    <mat-option *ngFor="let stateElement of states" [value]="stateElement">{{
+                        stateElement }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
         <div>
             <mat-form-field appearance="outline" class="country-selector">
                 <mat-label>Country</mat-label>
                 <mat-select [(ngModel)]="selectedCountry" (ngModelChange)="onCountrySelected()">
                     <mat-option value="Global">Global</mat-option>
-                    <mat-option *ngFor="let countryElement of summaryReport" [value]="countryElement.country">{{ countryElement.country }}</mat-option>
+                    <mat-option *ngFor="let countryElement of summaryReport" [value]="countryElement.country">{{
+                        countryElement.country }}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
@@ -25,10 +40,10 @@
                         <div mat-card-avatar class="header-image-total"></div>
                         <mat-card-title class="sfFontText pt-2">Total Cases Registered</mat-card-title>
                         <mat-card-subtitle class="card-subtitle sfFontText pt-4">
-                            {{ displayData.cases }}
+                            {{ displayData.cases || displayData.confirmed}}
                             <span class="update-total">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{ displayData.todayCases }}
+                                {{ displayData.todayCases || displayData.deltaconfirmed }}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -43,7 +58,7 @@
                             {{displayData.active}}
                             <span class="update-active">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{displayData.todayCases}}
+                                {{ displayData.todayCases || displayData.deltaconfirmed }}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -58,7 +73,7 @@
                             {{displayData.recovered}}
                             <span class="update-recovered">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{displayData.todayRecovered}}
+                                {{displayData.todayRecovered || displayData.deltarecovered}}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -73,7 +88,7 @@
                             {{displayData.deaths}}
                             <span class="update-deaths">
                                 <mat-icon>arrow_upward</mat-icon>
-                                {{displayData.todayDeaths}}
+                                {{displayData.todayDeaths || displayData.deltadeaths}}
                             </span>
                         </mat-card-subtitle>
                     </mat-card-header>
@@ -104,7 +119,7 @@
     <div class="covid-report-bg mat-elevation-z4">
         <div class="pt-3 pl-2">
             <mat-icon class="v-align-middle">public</mat-icon>
-            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">COVID-19 data by Country</span>
+            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">COVID-19 Worldwide Data by Country</span>
         </div>
 
         <div>

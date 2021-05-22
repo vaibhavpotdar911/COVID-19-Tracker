@@ -80,4 +80,11 @@ body { margin: 0; font-family: sanFranciscoText; font-size: medium; }
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.feedback-input{
+    width: 70%;
+    align-items: center;
+    text-align: center;
 }

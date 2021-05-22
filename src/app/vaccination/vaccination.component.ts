@@ -56,4 +56,5 @@ export class VaccinationComponent implements OnInit {
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
+  
 }

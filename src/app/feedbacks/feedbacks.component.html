@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="grid-container">
+        <app-add-feedback (feedbackAdd)="addFeedback($event)"></app-add-feedback>
+        <div class="grid-container pl-2">
+            <mat-icon class="v-align-middle">forum</mat-icon>
+            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Feedbacks</span>
+        </div>
+        <div class="grid-container">
+            <div class="grid-container">
+                <div *ngIf="this.feedbacks.length===0; else elseBlock">
+                    <div class="alert alert-danger " role="alert">
+                        No feedbacks yet.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <div *ngFor="let feedback of feedbacks; index as i">
+                <app-feedback-item [feedback]="feedback" [i]="i" (feedbackDelete)="deleteFeedback($event)"
+                    (feedbackCheckbox)="toggleFeedback($event)"></app-feedback-item>
+            </div>
+        </ng-template>
+    </div>
+</div>

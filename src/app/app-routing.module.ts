@@ -5,6 +5,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VaccinationComponent } from './vaccination/vaccination.component';
+import { TrialComponent } from './trial/trial.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routes: Routes = [
   {
@@ -17,10 +19,13 @@ const routes: Routes = [
     path: 'projects', component: ProjectsComponent
   },
   {
-    path: 'contactus', component: ContactusComponent
+    path: 'feedback', component: FeedbackComponent
   },
   {
     path: 'vaccination', component: VaccinationComponent
+  },
+  {
+    path: 'trial', component: TrialComponent
   }
 ];
 
