@@ -1,3 +1,10 @@
+.country-selector{
+  min-width: 280px;
+}
+
+.small-padding{
+  padding-left: 0.5rem;
+}
 .covid-worldwide-card {
   background-color: #ebe9ee;
   min-height: 100%;

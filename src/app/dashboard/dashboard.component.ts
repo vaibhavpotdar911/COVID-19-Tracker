@@ -3,6 +3,7 @@ import { WorldwideCovidService } from "../worldwide-covid.service";
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import * as pluginDataLabels from 'chart.js';
+import { Covid19apiService } from '../covid19api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +11,26 @@ import * as pluginDataLabels from 'chart.js';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  data: any;
-  constructor(private worldwideService: WorldwideCovidService) { }
+  globalData: any;
+  summaryReport: any;
+
+  displayData: any;
+
+  selectedCountry!: string;
+  constructor(private worldwideService: WorldwideCovidService, public covidAPIService: Covid19apiService) { }
 
   ngOnInit() {
-    this.worldwideService.worldwideReports().subscribe((result) =>{
-      this.data=result;
+    this.worldwideService.worldwideReports().subscribe((result) => {
+      this.globalData = result;
+      this.displayData = result;
+    });
+
+    this.selectedCountry="Global";
+
+    this.covidAPIService.covid19Reports().subscribe((summary) => {
+      this.summaryReport = summary;
     });
   }
-
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -45,7 +57,7 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
-  
+
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -56,4 +68,18 @@ export class DashboardComponent implements OnInit {
     console.log(event, active);
   }
 
+  //update dashboard
+  public onCountrySelected() { /*
+    console.log(this.selectedCountry);
+    console.log(this.summaryReport.country);*/
+    if(this.selectedCountry == 'Global'){
+      this.displayData = this.globalData;
+    }
+    for (let summary of this.summaryReport) {
+      if(this.selectedCountry == summary.country){
+        this.displayData = summary;
+        /*console.log(this.displayData);*/
+      }
+    }
+  }
 }
