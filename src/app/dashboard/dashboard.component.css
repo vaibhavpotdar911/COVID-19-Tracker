@@ -2,6 +2,11 @@
   min-width: 280px;
 }
 
+.state-selector{
+  min-width: 280px;
+  padding-right: 1rem;
+}
+
 .small-padding{
   padding-left: 0.5rem;
 }

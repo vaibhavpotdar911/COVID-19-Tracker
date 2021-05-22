@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VaccinationComponent } from './vaccination/vaccination.component';
+import { TrialComponent } from './trial/trial.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'vaccination', component: VaccinationComponent
+  },
+  {
+    path: 'trial', component: TrialComponent
   }
 ];
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
@@ -17,6 +17,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VaccinationComponent } from './vaccination/vaccination.component';
+import { TrialComponent } from './trial/trial.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
     FooterComponent,
     DashboardComponent,
     VaccinationComponent,
+    TrialComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
     FormsModule
   ],
   providers: [],
+  schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

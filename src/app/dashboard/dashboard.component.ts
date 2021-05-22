@@ -17,7 +17,12 @@ export class DashboardComponent implements OnInit {
   displayData: any;
 
   selectedCountry!: string;
-  constructor(private worldwideService: WorldwideCovidService, public covidAPIService: Covid19apiService) { }
+  selectedState!: string;
+
+  states: any;
+  indiaData: any;
+
+  constructor(private worldwideService: WorldwideCovidService, public covidAPIService: Covid19apiService, public covid19India: Covid19apiService) { }
 
   ngOnInit() {
     this.worldwideService.worldwideReports().subscribe((result) => {
@@ -30,6 +35,15 @@ export class DashboardComponent implements OnInit {
     this.covidAPIService.covid19Reports().subscribe((summary) => {
       this.summaryReport = summary;
     });
+
+    this.covid19India.covid19IndiaData().subscribe((result) => {
+      this.indiaData = result;
+      console.log(this.indiaData.state_wise); // debug
+      this.states = Object.keys(this.indiaData.state_wise);
+      console.log(this.states);
+    });
+
+    this.selectedState = "Select an option";
   }
   // Pie
   public pieChartOptions: ChartOptions = {
@@ -79,6 +93,24 @@ export class DashboardComponent implements OnInit {
       if(this.selectedCountry == summary.country){
         this.displayData = summary;
         /*console.log(this.displayData);*/
+      }
+    }
+  }
+
+  //India states
+  public onStateSelected() { /*
+    console.log(this.summaryReport.country);*/
+    if(this.selectedState == 'Select an option'){
+    }
+    for (let i=0; i<this.states.length; i++) {
+      console.log()
+      console.log(this.selectedState == Object.keys(this.indiaData.state_wise)[i]);
+      
+      if(this.selectedState == Object.keys(this.indiaData.state_wise)[i]){
+        console.log(this.indiaData.state_wise[this.selectedState]);
+
+        this.displayData = this.indiaData.state_wise[this.selectedState];
+        console.log(this.displayData);
       }
     }
   }

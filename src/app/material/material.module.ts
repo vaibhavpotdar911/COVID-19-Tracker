@@ -11,6 +11,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatSelectModule } from "@angular/material/select";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatProgressSpinner, MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 
 const MaterialComponents = [
@@ -25,7 +26,8 @@ const MaterialComponents = [
   MatCardModule,
   MatGridListModule,
   MatSelectModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({
