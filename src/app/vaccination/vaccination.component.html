@@ -1,69 +1,228 @@
 <div class="container-fluid">
-    <div class="pb-3 pl-2">
-        <mat-icon class="v-align-middle">local_hospital</mat-icon>
-        <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide Vaccination</span>
-    </div>
-    <div>
-        <mat-grid-list cols="4" gutterSize="15px" rowHeight="125px" class="vaccination-grid">
-            <mat-grid-tile>
-                <mat-card class="covid-worldwide-card">
-                    <mat-card-header class="mat-card-center">
-                        <div mat-card-avatar class="header-image-population"></div>
-                        <mat-card-title class="sfFontText pt-2">Worldwide Population</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{ vaccinationData.Global.All.population }}
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="covid-worldwide-card">
-                    <mat-card-header class="mat-card-center">
-                        <div mat-card-avatar class="header-image-vaccine-administered"></div>
-                        <mat-card-title class="sfFontText pt-2">Vaccines Adminstered</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{vaccinationData.Global.All.administered}}
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="covid-worldwide-card">
-                    <mat-card-header class="mat-card-center">
-                        <div mat-card-avatar class="header-image-total-vaccinated"></div>
-                        <mat-card-title class="sfFontText pt-2">Population Fully Vaccinated</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{vaccinationData.Global.All.people_vaccinated}}
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="covid-worldwide-card">
-                    <mat-card-header class="mat-card-center">
-                        <div mat-card-avatar class="header-image-partial-vaccinated"></div>
-                        <mat-card-title class="sfFontText pt-2">Population Partially Vaccinated</mat-card-title>
-                        <mat-card-subtitle class="card-subtitle sfFontText pt-3">
-                            {{vaccinationData.Global.All.people_partially_vaccinated}}
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
-    <div class="pt-3"></div>
+    <div class="d-flex">
+        <div class="pl-2 pt-2">
+            <mat-icon class="v-align-middle">local_hospital</mat-icon>
+            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Worldwide Vaccination</span>
 
-    <div class=" center-div mat-elevation-z6">
-        <div class="chart">
-            <mat-icon class="v-align-middle">pie_chart</mat-icon>
-            <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Visual Representation</span>
-            <canvas class="myCanvas" baseChart
-                [data]="[(this.vaccinationData.Global.All.population)-(vaccinationData.Global.All.people_vaccinated)-(this.vaccinationData.Global.All.people_partially_vaccinated), this.vaccinationData.Global.All.people_vaccinated, this.vaccinationData.Global.All.people_partially_vaccinated]"
-                [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions"
-                [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
-            </canvas>
-            <button class="toggleBtn sfFontText" mat-raised-button color="accent" (click)="pieChartLegend=!pieChartLegend">Toggle
-                Legend</button>
+            <span class="mat-h1 sfFontDisplay small-padding v-align-middle" *ngIf="selectedCountry!=='Global'">/<span
+                    class="small-padding"> {{selectedCountry}}</span></span>
+        </div>
+        <div class="spacer"></div>
+        <div>
+            <mat-form-field appearance="outline" class="country-selector">
+                <mat-label>Country</mat-label>
+                <mat-select [(ngModel)]="selectedCountry" (ngModelChange)="onVaccinationCountrySelected()">
+                    <mat-option value="Global">Global</mat-option>
+                    <mat-option value="India">India</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- Global vaccination data -->
+    <div *ngIf="selectedCountry=='Global'">
+        <div>
+            <mat-grid-list cols="4" gutterSize="15px" rowHeight="125px" class="vaccination-grid">
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-population"></div>
+                            <mat-card-title class="sfFontText pt-2">Worldwide Population</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{ vaccinationData.Global.All.population }}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-vaccine-administered"></div>
+                            <mat-card-title class="sfFontText pt-2">Vaccines Adminstered</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{vaccinationData.Global.All.administered}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-total-vaccinated"></div>
+                            <mat-card-title class="sfFontText pt-2">Population Fully Vaccinated</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{vaccinationData.Global.All.people_vaccinated}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-partial-vaccinated"></div>
+                            <mat-card-title class="sfFontText pt-2">Population Partially Vaccinated</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{vaccinationData.Global.All.people_partially_vaccinated}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div class="pt-3"></div>
+
+        <div class=" center-div mat-elevation-z6">
+            <div class="chart">
+                <mat-icon class="v-align-middle">pie_chart</mat-icon>
+                <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Visual Representation</span>
+                <canvas class="myCanvas" baseChart
+                    [data]="[(this.vaccinationData.Global.All.population)-(vaccinationData.Global.All.people_vaccinated)-(this.vaccinationData.Global.All.people_partially_vaccinated), this.vaccinationData.Global.All.people_vaccinated, this.vaccinationData.Global.All.people_partially_vaccinated]"
+                    [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                </canvas>
+                <button class="toggleBtn sfFontText" mat-raised-button color="accent"
+                    (click)="pieChartLegend=!pieChartLegend">Toggle
+                    Legend</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- India Vaccination Data-->
+    <div *ngIf="selectedCountry=='India'">
+        <div>
+            <mat-grid-list cols="4" gutterSize="15px" rowHeight="125px" class="vaccination-grid">
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-population"></div>
+                            <mat-card-title class="sfFontText pt-2">Population</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                1390885000
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-vaccine-administered"></div>
+                            <mat-card-title class="sfFontText pt-2">Vaccines Adminstered</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{indiaVaccinationData.topBlock.vaccination.total_doses}}
+                                <span class="update-vaccinated">
+                                    <mat-icon>arrow_upward</mat-icon>
+                                    {{indiaVaccinationData.topBlock.vaccination.today}}
+                                </span>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-total-vaccinated"></div>
+                            <mat-card-title class="sfFontText pt-2">Population Fully Vaccinated</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{indiaVaccinationData.topBlock.vaccination.tot_dose_2}}
+                                <span class="update-vaccinated">
+                                    <mat-icon>arrow_upward</mat-icon>
+                                    {{indiaVaccinationData.topBlock.vaccination.today_dose_two}}
+                                </span>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card class="covid-worldwide-card">
+                        <mat-card-header class="mat-card-center">
+                            <div mat-card-avatar class="header-image-partial-vaccinated"></div>
+                            <mat-card-title class="sfFontText pt-2">Population Partially Vaccinated</mat-card-title>
+                            <mat-card-subtitle class="card-subtitle sfFontText pt-3">
+                                {{ indiaVaccinationData.topBlock.vaccination.tot_dose_1 }}
+                                <span class="update-vaccinated">
+                                    <mat-icon>arrow_upward</mat-icon>
+                                    {{indiaVaccinationData.topBlock.vaccination.today_dose_one}}
+                                </span>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div class="pt-3"></div>
+        <div class="d-flex">
+            <div class="pie-chart-india-div mat-elevation-z6">
+                <div class="pie-chart-india">
+                    <mat-icon class="v-align-middle">pie_chart</mat-icon>
+                    <span class="mat-h2 sfFontDisplay v-align-middle pl-1">Visual Representation of
+                        {{selectedCountry}}'s Population</span>
+                    <canvas class="myCanvas" baseChart
+                        [data]="[(indianPopulation)-(indiaVaccinationData.topBlock.vaccination.tot_dose_2)-(indiaVaccinationData.topBlock.vaccination.tot_dose_1), indiaVaccinationData.topBlock.vaccination.tot_dose_2 , indiaVaccinationData.topBlock.vaccination.tot_dose_1]"
+                        [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions"
+                        [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                    </canvas>
+                    <button class="toggleBtn sfFontText" mat-raised-button color="accent"
+                        (click)="pieChartLegend=!pieChartLegend">Toggle
+                        Legend</button>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="donut-chart-india-div mat-elevation-z6">
+                <div class="pie-chart-india-vaccine">
+                    <mat-icon class="v-align-middle">donut_large</mat-icon>
+                    <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Vaccines
+                        Consumed</span>
+                    <div class="half-donut">
+                        <canvas class="myCanvas" baseChart
+                            [data]="[indiaVaccinationData.topBlock.vaccination.covishield, indiaVaccinationData.topBlock.vaccination.covaxin, indiaVaccinationData.topBlock.vaccination.sputnik]"
+                            [labels]="donutChartLabels" [chartType]="donutChartType" [options]="donutChartOptions"
+                            [plugins]="donutChartPlugins" [colors]="donutChartColors" [legend]="donutChartLegend">
+                        </canvas>
+                    </div>
+                    <div class="half-donut">
+                        <button class="toggleBtn sfFontText" mat-raised-button color="accent"
+                            (click)="donutChartLegend=!donutChartLegend">Toggle
+                            Legend</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-3"></div>
+        <div class="d-flex">
+            <div class="pie-chart-india-div mat-elevation-z6">
+                <div class="pie-chart-india">
+                    <mat-icon class="v-align-middle">pie_chart</mat-icon>
+                    <span class="mat-h2 sfFontDisplay v-align-middle pl-1">Vaccination by Gender</span>
+                    <canvas class="myCanvas" baseChart
+                        [data]="[indiaVaccinationData.topBlock.vaccination.male, indiaVaccinationData.topBlock.vaccination.female , indiaVaccinationData.topBlock.vaccination.others]"
+                        [labels]="pieChartGenderLabels" [chartType]="pieChartGenderType" [options]="pieChartOptions"
+                        [plugins]="pieChartPlugins" [colors]="pieChartGenderColors" [legend]="pieChartLegend">
+                    </canvas>
+                    <button class="toggleBtn sfFontText" mat-raised-button color="accent"
+                        (click)="pieChartLegend=!pieChartLegend">Toggle
+                        Legend</button>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="donut-chart-india-div mat-elevation-z6">
+                <div class="pie-chart-india-vaccine">
+                    <mat-icon class="v-align-middle">donut_large</mat-icon>
+                    <span class="mat-h1 sfFontDisplay v-align-middle pl-1">Vaccination by Age</span>
+                    <div class="half-donut">
+                        <canvas class="myCanvas" baseChart
+                            [data]="[indiaVaccinationData.vaccinationByAge.vac_18_45, indiaVaccinationData.vaccinationByAge.vac_45_60, indiaVaccinationData.vaccinationByAge.above_60]"
+                            [labels]="pieChartAgeLabels" [chartType]="pieChartAgeType" [options]="donutChartOptions"
+                            [plugins]="donutChartPlugins" [colors]="donutChartColors" [legend]="donutChartLegend">
+                        </canvas>
+                    </div>
+                    <div class="half-donut">
+                        <button class="toggleBtn sfFontText" mat-raised-button color="accent"
+                            (click)="donutChartLegend=!donutChartLegend">Toggle
+                            Legend</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

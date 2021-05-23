@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Covid19apiService } from '../covid19api.service';
 import { CountryReports } from "src/countryReports";
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
 })
 
 export class Covid19ReportsComponent implements OnInit {
-
+  @Input() deviceXs: boolean;
   ELEMENT_DATA : CountryReports[] = [];
 
   displayedColumns: string[] = ['flag','country','cases','todayCases','deaths','todayDeaths','recovered','active','critical','casesPerOneMillion','deathsPerOneMillion','tests','testsPerOneMillion'];

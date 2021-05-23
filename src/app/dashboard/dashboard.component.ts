@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { WorldwideCovidService } from "../worldwide-covid.service";
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
@@ -11,6 +11,7 @@ import { Covid19apiService } from '../covid19api.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  @Input() deviceXs: boolean;
   globalData: any;
   summaryReport: any;
 
@@ -38,14 +39,12 @@ export class DashboardComponent implements OnInit {
 
     this.covid19India.covid19IndiaData().subscribe((result) => {
       this.indiaData = result;
-      console.log(this.indiaData.state_wise); // debug
       this.states = Object.keys(this.indiaData.state_wise);
-      console.log(this.states);
     });
 
     this.selectedState = "Select an option";
   }
-  // Pie
+  // Donut
   public pieChartOptions: ChartOptions = {
     responsive: true,
     legend: {

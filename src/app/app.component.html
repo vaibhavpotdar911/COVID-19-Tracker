@@ -1,7 +1,7 @@
-<app-navbar></app-navbar>
+<app-navbar [deviceXs]="deviceXs"></app-navbar>
 
 <div class="grid-container">
-    <router-outlet></router-outlet>
+    <router-outlet [deviceXs]="deviceXs"></router-outlet>
 </div>
 
-<app-footer class="mt-auto"></app-footer>
+<app-footer class="mt-auto" [deviceXs]="deviceXs"></app-footer>

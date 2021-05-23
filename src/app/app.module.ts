@@ -35,7 +35,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     VaccinationComponent,
     AddFeedbackComponent,
     FeedbackItemComponent,
-    FeedbacksComponent,
+    FeedbacksComponent
   ],
   imports: [
     BrowserModule,

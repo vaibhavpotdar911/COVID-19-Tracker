@@ -7,7 +7,7 @@ import { Feedback } from '../Feedback';
   styleUrls: ['./feedback-item.component.css']
 })
 export class FeedbackItemComponent implements OnInit {
-
+  @Input() deviceXs: boolean;
   @Input()
   feedback!: Feedback;
   @Input()

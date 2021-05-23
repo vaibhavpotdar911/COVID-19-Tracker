@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Feedback } from '../Feedback';
 
 
@@ -9,6 +9,7 @@ import { Feedback } from '../Feedback';
   styleUrls: ['./feedbacks.component.css']
 })
 export class FeedbacksComponent implements OnInit {
+  @Input() deviceXs: boolean;
   localItem: any;
   feedbacks: Feedback[];
 

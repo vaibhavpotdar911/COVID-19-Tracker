@@ -22,4 +22,7 @@ export class Covid19apiService {
     return this.http.get("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", { headers: httpHeaders });
   }
 
+  public covid19IndiaVaccinationData() {
+    return this.http.get("https://api.cowin.gov.in/api/v1/reports/v2/getPublicReports");
+  }
 }

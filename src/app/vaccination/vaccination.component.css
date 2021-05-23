@@ -39,28 +39,10 @@
   color: rgb(83, 83, 83);
 }
 
-.update-total {
-  margin-left: 2rem;
-  font-size: x-large;
-  color: navy;
-}
-
-.update-active {
-  margin-left: 2rem;
-  font-size: x-large;
-  color: chocolate;
-}
-
-.update-recovered {
-  margin-left: 2rem;
+.update-vaccinated {
+  margin-left: 1rem;
   font-size: x-large;
   color: green;
-}
-
-.update-deaths {
-  margin-left: 2rem;
-  font-size: x-large;
-  color: red;
 }
 
 .chart {
@@ -69,6 +51,8 @@
   align-items: center;
   text-align: center;
   margin: 0px auto;
+  padding-bottom: 30px;
+
 }
 
 .myCanvas {
@@ -76,11 +60,49 @@
 }
 
 .toggleBtn {
-   margin-bottom: 20px;
-   font-size: medium;
+  font-size: medium;
 }
 
 .center-div {
  background-color: #ebe9ee;
  border-radius: 10px;
 }
+
+.pie-chart-india {
+  padding-top: 30px;
+  align-items: center;
+  text-align: center;
+  margin: 0px auto;
+  padding-bottom: 30px;
+}
+
+.pie-chart-india-div {
+  background-color: #ebe9ee;
+  border-radius: 10px;
+  width: 50%;
+  margin-right: 1rem;
+ }
+
+ .pie-chart-india-vaccine {
+  padding-top: 30px;
+  align-items: center;
+  text-align: center;
+  margin: 0px auto;
+  padding-bottom: 30px;
+  width: 70%;
+}
+
+.half-donut{
+  margin-top: 3rem;
+}
+
+.small-padding{
+  padding-left: 0.5rem;
+}
+
+.donut-chart-india-div {
+  background-color: #ebe9ee;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 1rem;
+ }

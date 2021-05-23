@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Feedback } from 'src/app/Feedback';
 
 @Component({
@@ -8,6 +8,7 @@ import { Feedback } from 'src/app/Feedback';
 })
 export class AddFeedbackComponent implements OnInit {
   @Output() feedbackAdd: EventEmitter<Feedback> = new EventEmitter();
+  @Input() deviceXs: boolean;
   sno!: number;
   name!: string;
   email!: string;
