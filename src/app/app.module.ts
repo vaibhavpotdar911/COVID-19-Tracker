@@ -20,6 +20,7 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { FeedbackItemComponent } from './feedback-item/feedback-item.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
