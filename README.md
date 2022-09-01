@@ -4,7 +4,7 @@ This is a web-application project developed in Angular 12.0.
 
 ## Production link
 
-Navigate to `http://covidtracker.vaibhavpotdar.tech`.
+Navigate to http://covidtracker.vaibhavpotdar.tech.
 
 ## APIs used
 
