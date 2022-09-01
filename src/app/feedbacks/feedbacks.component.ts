@@ -25,14 +25,12 @@ export class FeedbacksComponent implements OnInit {
   ngOnInit(): void {
   }
   deleteFeedback(feedback: Feedback) {
-    console.log(feedback);
     const index = this.feedbacks.indexOf(feedback);
     this.feedbacks.splice(index, 1);
     localStorage.setItem("feedbacks", JSON.stringify(this.feedbacks));
 
   }
   addFeedback(feedback: Feedback) {
-    console.log(feedback);
     this.feedbacks.push(feedback);
     localStorage.setItem("feedbacks", JSON.stringify(this.feedbacks));
   }

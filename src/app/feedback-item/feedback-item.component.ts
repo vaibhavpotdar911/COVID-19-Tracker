@@ -23,7 +23,6 @@ export class FeedbackItemComponent implements OnInit {
   }
   onClick(feedback: Feedback) {
     this.feedbackDelete.emit(feedback);
-    console.log("onClick has been trigerred");
   }
 
   onCheckboxClick(feedback:any){

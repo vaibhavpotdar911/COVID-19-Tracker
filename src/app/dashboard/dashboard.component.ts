@@ -74,42 +74,32 @@ export class DashboardComponent implements OnInit {
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+    
   }
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+    
   }
 
   //update dashboard
-  public onCountrySelected() { /*
-    console.log(this.selectedCountry);
-    console.log(this.summaryReport.country);*/
+  public onCountrySelected() { 
     if(this.selectedCountry == 'Global'){
       this.displayData = this.globalData;
     }
     for (let summary of this.summaryReport) {
       if(this.selectedCountry == summary.country){
         this.displayData = summary;
-        /*console.log(this.displayData);*/
       }
     }
   }
 
   //India states
-  public onStateSelected() { /*
-    console.log(this.summaryReport.country);*/
+  public onStateSelected() { 
     if(this.selectedState == 'Select an option'){
     }
     for (let i=0; i<this.states.length; i++) {
-      console.log()
-      console.log(this.selectedState == Object.keys(this.indiaData.state_wise)[i]);
-      
       if(this.selectedState == Object.keys(this.indiaData.state_wise)[i]){
-        console.log(this.indiaData.state_wise[this.selectedState]);
-
         this.displayData = this.indiaData.state_wise[this.selectedState];
-        console.log(this.displayData);
       }
     }
   }

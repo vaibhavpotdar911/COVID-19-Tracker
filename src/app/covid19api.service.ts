@@ -11,7 +11,7 @@ export class Covid19apiService {
   constructor(public http: HttpClient) { }
 
   public covid19Reports() {
-    return this.http.get("https://corona.lmao.ninja/v3/covid-19/countries");
+    return this.http.get("https://disease.sh/v3/covid-19/countries");
   }
 
   public covid19IndiaData() {
