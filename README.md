@@ -8,7 +8,6 @@ Navigate to http://covidtracker.vaibhavpotdar.tech.
 
 ## APIs used
 
-1. https://api.caw.sh/v3/covid-19/all
-2. https://disease.sh/v3/covid-19/countries
-3. https://corona-virus-world-and-india-data.p.rapidapi.com/api_india
-4. https://disease.sh/v3/covid-19/countries
+`1. https://api.caw.sh/v3/covid-19/all`
+`2. https://disease.sh/v3/covid-19/countries`
+`3. https://corona-virus-world-and-india-data.p.rapidapi.com/api_india`
